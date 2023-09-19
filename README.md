@@ -1,6 +1,7 @@
-# Tauri + Solid + Typescript + TailwindCSS
 
-This template should help get you started developing with Tauri, Solid and Typescript in Vite.
+# SolidJS Tailwind Tauri
+
+This template should help get you started developing with Tauri + Solid + Typescript + TailwindCSS.
 
 ## Cloning it 🐑
 
@@ -33,3 +34,7 @@ The above example uses [PNPM](https://pnpm.io) as the package manager and task r
 - [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode)
 - [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+
+---
+
+<img width="50" src="/public/tauri.svg" />
