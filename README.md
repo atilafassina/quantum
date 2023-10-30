@@ -8,13 +8,13 @@ This template should help get you started developing with Tauri + Solid + Typesc
 You can use the Template button on the GitHub UI and shallow clone this repository. Or, do it with degit:
 
 ```sh
-npx degit atilafassina/create-tauri-solidjs-tailwind
+npx degit atilafassina/create-solidjs-tailwind-tauri
 ```
 
 Alternatively, good old `git clone` can also work. It's recommended to make a shallow clone so it doesn't bring entire repository history:
 
 ```sh
-git clone --depth 1 https://github.com/atilafassina/create-tauri-solidjs-tailwind
+git clone --depth 1 https://github.com/atilafassina/create-solidjs-tailwind-tauri
 ```
 
 ## Running Dev 🚀
