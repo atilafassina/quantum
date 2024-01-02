@@ -45,24 +45,22 @@ pnpm tauri dev
 [Check the prerequisites](https://beta.tauri.app/guides/prerequisites/#ios) for having iOS ready to run (MacOS only).
 Once that is done, let’s create the XCode project:
 
-
-```sh
 pnpm tauri ios init
-```
+
+````
 
 If everything runs successfully (keep an eye for warnings on your terminal).
 You can start the development server:
 
 ```sh
 pnpm tauri ios dev --open
-```
+````
 
 This command will open XCode with your project, select the simulator and get ready to run.
 
 ## Android 🤖
 
 <img src="/docs/android.png" align="right" height="300"/>
-
 
 [Android Studio and a few other steps will be required](https://beta.tauri.app/guides/prerequisites/#android) to get things up and running.
 Once that's done, you can initialize the project:
