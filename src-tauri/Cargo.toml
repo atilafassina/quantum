@@ -1,5 +1,5 @@
 [package]
-name = "create-solidjs-tailwind-tauri"
+name = "quantum"
 version = "0.0.0"
 description = "A Tauri App"
 authors = ["you"]
@@ -7,13 +7,18 @@ license = ""
 repository = ""
 edition = "2021"
 
+[lib]
+name = "quantum_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "1.4", features = [] }
+tauri-build = { version = "2.0.0-alpha", features = [] }
 
 [dependencies]
-tauri = { version = "1.4", features = ["shell-open"] }
+tauri = { version = "2.0.0-alpha", features = [] }
+tauri-plugin-shell = "2.0.0-alpha"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 
@@ -21,3 +26,4 @@ serde_json = "1.0"
 # this feature is used for production builds or when `devPath` points to the filesystem
 # DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
+

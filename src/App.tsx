@@ -1,29 +1,21 @@
 import { createSignal } from "solid-js";
-import { invoke } from "@tauri-apps/api/tauri";
+import { invoke } from "@tauri-apps/api/core";
 
 function App() {
   const [greetMsg, setGreetMsg] = createSignal("");
   const [name, setName] = createSignal("");
 
   async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
     setGreetMsg(await invoke("greet", { name: name() }));
   }
 
   return (
     <div class="flex min-h-screen flex-col justify-center gap-6 text-center dark:bg-neutral-800 dark:text-neutral-200">
       <h1 class="text-center text-4xl font-semibold text-neutral-50">
-        Welcome to Tauri!
+        Quantum
       </h1>
 
       <div class="flex justify-center">
-        <a href="https://vitejs.dev" target="_blank">
-          <img
-            src="/vite.svg"
-            class="h-36 p-6 transition-all duration-700 will-change-[filter] hover:drop-shadow-[0_0_32px_#747bff]"
-            alt="Vite logo"
-          />
-        </a>
         <a
           href="https://tauri.app"
           target="_blank"
@@ -48,8 +40,8 @@ function App() {
         </a>
       </div>
 
-      <p class="text-neutral-300">
-        Click on the Tauri, Vite, and Solid logos to learn more.
+      <p class="terxt-3xl p-6 text-neutral-300">
+        Tauri running Solid even on mobile 🤯
       </p>
 
       <form
