@@ -40,8 +40,11 @@ pnpm tauri dev
 
 ## iOS 🍎
 
+<img src="/docs/ios.png" align="right" height="300"/>
+
 [Check the prerequisites](https://beta.tauri.app/guides/prerequisites/#ios) for having iOS ready to run (MacOS only).
 Once that is done, let’s create the XCode project:
+
 
 ```sh
 pnpm tauri ios init
@@ -58,6 +61,9 @@ This command will open XCode with your project, select the simulator and get rea
 
 ## Android 🤖
 
+<img src="/docs/android.png" align="right" height="300"/>
+
+
 [Android Studio and a few other steps will be required](https://beta.tauri.app/guides/prerequisites/#android) to get things up and running.
 Once that's done, you can initialize the project:
 
@@ -70,6 +76,8 @@ Open the Android Studio, and run the development build:
 ```sh
 pnpm tauri android dev
 ```
+
+This command will open the Android Pixel simulator.
 
 ## Suggested VSCode extensions 💡
 
