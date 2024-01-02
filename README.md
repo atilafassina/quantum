@@ -1,20 +1,20 @@
 
-# SolidJS Tailwind Tauri
+# Quantum
 
-This template should help get you started developing with Tauri + Solid + Typescript + TailwindCSS.
+This template should help get you started developing with Tauri + Solid + TypeScript + TailwindCSS.
 
 ## Cloning it 🐑
 
 You can use the Template button on the GitHub UI and shallow clone this repository. Or, do it with degit:
 
 ```sh
-npx degit atilafassina/create-solidjs-tailwind-tauri
+npx degit atilafassina/quantum
 ```
 
 Alternatively, good old `git clone` can also work. It's recommended to make a shallow clone so it doesn't bring entire repository history:
 
 ```sh
-git clone --depth 1 https://github.com/atilafassina/create-solidjs-tailwind-tauri
+git clone --depth 1 https://github.com/atilafassina/quantum
 ```
 
 ## Running Dev 🚀

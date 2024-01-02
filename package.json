@@ -1,5 +1,5 @@
 {
-  "name": "create-solidjs-tailwind-tauri",
+  "name": "quantum",
   "version": "0.0.0",
   "type": "module",
   "description": "",
@@ -12,18 +12,18 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@tauri-apps/api": "^1.4.0",
-    "solid-js": "^1.7.8",
-    "tailwindcss": "^3.3.3"
+    "@tauri-apps/api": "latest",
+    "solid-js": "latest",
+    "tailwindcss": "latest"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.4.0",
+    "@tauri-apps/cli": "latest",
     "autoprefixer": "^10.4.15",
     "postcss": "^8.4.30",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.4",
-    "vite-plugin-solid": "^2.7.0"
+    "typescript": "latest",
+    "vite": "latest",
+    "vite-plugin-solid": "latest"
   }
 }

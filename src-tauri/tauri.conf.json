@@ -7,7 +7,7 @@
     "withGlobalTauri": false
   },
   "package": {
-    "productName": "create-solidjs-tailwind-tauri",
+    "productName": "quantum",
     "version": "0.0.0"
   },
   "tauri": {
@@ -37,7 +37,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "create-solidjs-tailwind-tauri",
+        "title": "created with Quantum",
         "width": 800,
         "height": 600
       }
