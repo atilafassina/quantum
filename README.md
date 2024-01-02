@@ -1,7 +1,8 @@
-
 # Quantum
 
 This template should help get you started developing with Tauri + Solid + TypeScript + TailwindCSS.
+
+> ‼️ Tauri v2 is approaching stability fast, but it not yet considered ready for production use.
 
 ## Cloning it 🐑
 
@@ -17,7 +18,19 @@ Alternatively, good old `git clone` can also work. It's recommended to make a sh
 git clone --depth 1 https://github.com/atilafassina/quantum
 ```
 
-## Running Dev 🚀
+## Running 🚤
+
+The snippets below use [PNPM](https://pnpm.io) as the package manager and task runner, but Yarn, NPM, Bun, or Cargo should also work with the approriate syntax.
+
+> 🛟 Check the [Tauri Docs](https://beta.tauri.app/) for more guidance on building your app.
+
+First step is always to install JavaScript dependencies from the root:
+
+```sh
+pnpm install
+```
+
+## Desktop (MacOS, Linux, or Windows) 🖥️
 
 Once the template is properly cloned, install Node.js dependencies and you can run the Tauri app.
 
@@ -25,9 +38,38 @@ Once the template is properly cloned, install Node.js dependencies and you can r
 pnpm tauri dev
 ```
 
-The above example uses [PNPM](https://pnpm.io) as the package manager and task runner, but Yarn, NPM, or Bun should also work.
+## iOS 🍎
 
-> 🛟 Check the [Tauri Docs](https://tauri.app) for more guidance on building your app.
+[Check the prerequisites](https://beta.tauri.app/guides/prerequisites/#ios) for having iOS ready to run (MacOS only).
+Once that is done, let’s create the XCode project:
+
+```sh
+pnpm tauri ios init
+```
+
+If everything runs successfully (keep an eye for warnings on your terminal).
+You can start the development server:
+
+```sh
+pnpm tauri ios dev --open
+```
+
+This command will open XCode with your project, select the simulator and get ready to run.
+
+## Android 🤖
+
+[Android Studio and a few other steps will be required](https://beta.tauri.app/guides/prerequisites/#android) to get things up and running.
+Once that's done, you can initialize the project:
+
+```sh
+pnpm tauri android init
+```
+
+Open the Android Studio, and run the development build:
+
+```sh
+pnpm tauri android dev
+```
 
 ## Suggested VSCode extensions 💡
 
