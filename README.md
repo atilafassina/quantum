@@ -2,7 +2,8 @@
 
 This template should help get you started developing with Tauri + Solid + TypeScript + TailwindCSS.
 
-> ‼️ Tauri v2 is approaching stability fast, but it not yet considered ready for production use.
+> [!Caution]
+>  Tauri v2 is approaching stability fast, but it not yet considered ready for production use.
 
 ## Cloning it 🐑
 
