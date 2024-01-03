@@ -20,7 +20,7 @@ git clone --depth 1 https://github.com/atilafassina/quantum
 
 ## Running 🚤
 
-The snippets below use [PNPM](https://pnpm.io) as the package manager and task runner, but Yarn, NPM, Bun, or Cargo should also work with the approriate syntax.
+The snippets below use [PNPM](https://pnpm.io) as the package manager and task runner, but Yarn, NPM, Bun, or Cargo should also work with the appropriate syntax.
 
 > 🛟 Check the [Tauri Docs](https://beta.tauri.app/) for more guidance on building your app.
 
