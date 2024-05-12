@@ -3,7 +3,7 @@
 This template should help get you started developing with Tauri + Solid + TypeScript + TailwindCSS.
 
 > [!Caution]
->  Tauri v2 is approaching stability fast, but it not yet considered ready for production use.
+> Tauri v2 is approaching stability fast, but it not yet considered ready for production use.
 
 ## Cloning it 🐑
 
@@ -77,6 +77,31 @@ pnpm tauri android dev
 ```
 
 This command will open the Android Pixel simulator.
+
+## Build Optimization ⚡
+
+With a few opinionated defaults, Quantum enforces a smaller binary size than stock Tauri templates. Except for some special cases, these work particularly well.
+
+- `panic = "abort"`
+  The compiler will abort the program immediately when a panic occurs in production. Without performing any cleanup. Code will execute faster, the tradeoff is you won't get as much information about the panic when it occurs.
+
+- `codegen-units = 1`
+  Explicitly tells the compiler to use only one code generation unit during compilation. Code generation units (CGUs) represent individual units of code that the compiler processes independently.
+
+Reducing CGUs to a minimum will potentially reduces memory consumption and leads to faster compilation time. This setting hinders parallelization, so it's worth to benchmark in your particular app.
+
+- `lto = true`
+  Link Time Optimization (lto) enables the compiler to make more aggressive optimizations than it can do at the individual file level, resulting in potentially significant performance improvements in the final executable. However, enabling LTO may increase compilation times and require more memory during the linking phase, as the compiler needs to analyze and optimize a larger amount of code.
+
+- `opt-level = "s"`
+
+Specifying the optimization level to be "size-optimized." This option instructs the compiler to prioritize reducing the size of the generated code while still aiming for reasonable performance.
+
+Using `"s"` is a **balanced** optimization. Some apps may find faster compilation times with `opt-level="z"`, though this may bring slower runtime performance as a tradeoff.
+
+- `strip = true`
+
+Stripping symbols from generated code is generally recommended for release builds where binary size is a concern, and debuggability is less critical. It helps produce leaner binaries, which can be beneficial for deployment, distribution, or running in resource-constrained environments. Additionally, it can slightly enhance security because it makes the binaries harder to analyze.
 
 ## Suggested VSCode extensions 💡
 
