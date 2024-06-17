@@ -1,12 +1,12 @@
 import { createSignal } from "solid-js";
-import { invoke } from "@tauri-apps/api/core";
+import { commands } from "./bindings";
 
 function App() {
   const [greetMsg, setGreetMsg] = createSignal("");
   const [name, setName] = createSignal("");
 
   async function greet() {
-    setGreetMsg(await invoke("greet", { name: name() }));
+    setGreetMsg(await commands.greet(name()));
   }
 
   return (

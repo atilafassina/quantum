@@ -1,6 +1,7 @@
 use tauri_plugin_devtools;
 
 #[tauri::command]
+#[specta::specta]
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
@@ -16,9 +17,18 @@ pub fn run() {
         builder = builder.plugin(devtools);
     }
 
+    let invoke_handler = {
+        let builder = tauri_specta::ts::builder().commands(tauri_specta::collect_commands![greet]);
+
+        #[cfg(all(debug_assertions, not(mobile)))]
+        let builder = builder.path("../src/bindings.ts");
+
+        builder.build().unwrap()
+    };
+
     builder
         .plugin(tauri_plugin_shell::init())
-        .invoke_handler(tauri::generate_handler![greet])
+        .invoke_handler(invoke_handler)
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
