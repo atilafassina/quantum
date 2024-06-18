@@ -7,7 +7,7 @@
     "start": "vinxi start",
     "dev": "PORT=1420 HOST=0.0.0.0 vinxi dev",
     "build": "vinxi build",
-    "serve": "vinxi preview",
+    "serve": "vinxi serve",
     "tauri": "tauri",
     "format": "prettier --write src"
   },
