@@ -1,25 +1,21 @@
-import { defineConfig } from "vite";
-import solidPlugin from "vite-plugin-solid";
+import { defineConfig } from "@solidjs/start/config";
 import { internalIpV4 } from "internal-ip";
 
 // @ts-expect-error process is a nodejs global
 const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
 
+const host = await internalIpV4();
+
+let hmrPort = 5183;
+
 // https://vitejs.dev/config/
-export default defineConfig(async () => {
-  const host = await internalIpV4();
-
-  return {
-    plugins: [solidPlugin()],
-
+export default defineConfig({
+  ssr: false,
+  server: { preset: "static" },
+  vite: () => ({
     // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
-    //
-    // 1. prevent vite from obscuring rust errors
-    clearScreen: false,
-    // 2. tauri expects a fixed port, fail if that port is not available
+    // 1. tauri expects a fixed port, fail if that port is not available
     server: {
-      // port: 1420,
-      // strictPort: true,
       host: mobile ? "0.0.0.0" : false, // listen on all addresses
       port: 1420,
       strictPort: true,
@@ -27,16 +23,16 @@ export default defineConfig(async () => {
         ? {
             protocol: "ws",
             host,
-            port: 5183,
+            port: hmrPort++,
           }
         : undefined,
       watch: {
-        // 3. tell vite to ignore watching `src-tauri`
+        // 2. tell vite to ignore watching `src-tauri`
         ignored: ["**/src-tauri/**"],
       },
     },
     // 3. to make use of `TAURI_DEBUG` and other env variables
     // https://tauri.studio/v1/api/config#buildconfig.beforedevcommand
     envPrefix: ["VITE_", "TAURI_"],
-  };
+  }),
 });
