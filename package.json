@@ -4,19 +4,22 @@
   "type": "module",
   "description": "",
   "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
+    "start": "vinxi start",
+    "dev": "PORT=1420 HOST=0.0.0.0 vinxi dev",
+    "build": "vinxi build",
+    "serve": "vinxi serve",
     "tauri": "tauri",
     "format": "prettier --write src"
   },
   "license": "MIT",
   "dependencies": {
+    "@solidjs/router": "^0.13.5",
+    "@solidjs/start": "^1.0.1",
     "@tauri-apps/api": ">=2.0.0-beta.0",
     "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
     "solid-js": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "vinxi": "^0.3.12"
   },
   "devDependencies": {
     "@tauri-apps/cli": ">=2.0.0-beta.0",

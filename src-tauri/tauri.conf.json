@@ -7,14 +7,12 @@
     "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "pnpm build",
-    "frontendDist": "../dist"
+    "frontendDist": "../.output/public"
   },
   "plugins": {
     "updater": {
       "active": true,
-      "endpoints": [
-        "auto updater endpoint"
-      ],
+      "endpoints": ["auto updater endpoint"],
       "dialog": true,
       "pubkey": "public key"
     }

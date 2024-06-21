@@ -1,6 +1,3 @@
-#[cfg(debug_assertions)]
-use tauri_plugin_devtools;
-
 #[tauri::command]
 #[specta::specta]
 fn greet(name: &str) -> String {
