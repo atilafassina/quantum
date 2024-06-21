@@ -29,6 +29,7 @@ tauri-specta = { version = "=2.0.0-rc.11", features = [
   "javascript",
   "typescript",
 ] }
+tauri-plugin-notification = "2.0.0-beta.8"
 
 
 # Optimize for smaller binary size

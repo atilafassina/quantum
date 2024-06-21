@@ -17,6 +17,9 @@ importers:
       '@tauri-apps/api':
         specifier: '>=2.0.0-beta.0'
         version: 2.0.0-beta.7
+      '@tauri-apps/plugin-notification':
+        specifier: 2.0.0-beta.5
+        version: 2.0.0-beta.5
       '@tauri-apps/plugin-shell':
         specifier: '>=2.0.0-beta.0'
         version: 2.0.0-beta.2
@@ -1118,6 +1121,10 @@ packages:
   '@solidjs/start@1.0.1':
     resolution: {integrity: sha512-W29OlcJewXUehvDu5Lf+w8hQRiRMdMGaNUwMhnR3neqPxwdZf0LPPPVGyHxZHk4375HdcdBXHuvrOI+xv8Xrcg==}
 
+  '@tauri-apps/api@2.0.0-beta.13':
+    resolution: {integrity: sha512-Np1opKANzRMF3lgJ9gDquBCB9SxlE2lRmNpVx1+L6RyzAmigkuh0ZulT5jMnDA3JLsuSDU135r/s4t/Pmx4atg==}
+    engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
+
   '@tauri-apps/api@2.0.0-beta.4':
     resolution: {integrity: sha512-Nxtj28NYUo5iwYkpYslxmOPkdI2WkELU2e3UH9nbJm9Ydki2CQwJVGQxx4EANtdZcMNsEsUzRqaDTvEUYH1l6w==}
     engines: {node: '>= 18', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
@@ -1190,6 +1197,9 @@ packages:
     resolution: {integrity: sha512-MFh4Z093O+PXWI6KFR8E2zIOgpJ4zL8waDhFXVQgBpqiD4ieiqywjmbmNIWkVqYBGAia7ZI0juxpkZSyXT4f1A==}
     engines: {node: '>= 10'}
     hasBin: true
+
+  '@tauri-apps/plugin-notification@2.0.0-beta.5':
+    resolution: {integrity: sha512-5zYK2aT1ZvR+LnuwsnTvg28iEhI7FiZSPvBqQ8y6fj28T4oIHVox19Pk4YRyTyfyJN1nZclXxVAqWLSXLI9SKQ==}
 
   '@tauri-apps/plugin-shell@2.0.0-beta.2':
     resolution: {integrity: sha512-9rWsfN7Wt+EuWmpmNnK8bCs+04fzhEYrHtWyLIAYxb9diFdcJrEoctCP9YM2v+Uf8/y8qFC7VCbZ/9VQHANymQ==}
@@ -4063,6 +4073,8 @@ snapshots:
       - vinxi
       - vite
 
+  '@tauri-apps/api@2.0.0-beta.13': {}
+
   '@tauri-apps/api@2.0.0-beta.4': {}
 
   '@tauri-apps/api@2.0.0-beta.7': {}
@@ -4109,6 +4121,10 @@ snapshots:
       '@tauri-apps/cli-win32-arm64-msvc': 2.0.0-beta.12
       '@tauri-apps/cli-win32-ia32-msvc': 2.0.0-beta.12
       '@tauri-apps/cli-win32-x64-msvc': 2.0.0-beta.12
+
+  '@tauri-apps/plugin-notification@2.0.0-beta.5':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.13
 
   '@tauri-apps/plugin-shell@2.0.0-beta.2':
     dependencies:
