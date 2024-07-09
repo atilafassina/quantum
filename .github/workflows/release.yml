@@ -22,14 +22,36 @@ env:
 jobs:
   draft:
     runs-on: ubuntu-latest
+    outputs:
+      tag_name: ${{ steps.read_version.outputs.value }}
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
 
+      - name: Read version number
+        uses: SebRollen/toml-action@v1.0.2
+        id: read_version
+        with:
+          file: src-tauri/Cargo.toml
+          field: "package.version"
+
+      - name: Create tag
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{ steps.read_version.outputs.value }}',
+              sha: context.sha
+            })
+
       - name: create draft release
         uses: crabnebula-dev/cloud-release@v0.1.0
         with:
-          command: release draft ${{ env.CN_APP_SLUG }} --framework tauri
+          command: release draft ${{ env.CN_APP_SLUG }} "${{ steps.read_version.outputs.value }}" --framework tauri
           api-key: ${{ secrets.CN_API_KEY }}
 
   build:
@@ -75,11 +97,11 @@ jobs:
       - name: upload assets
         uses: crabnebula-dev/cloud-release@v0.1.0
         with:
-          command: release upload ${{ env.CN_APP_SLUG }} --framework tauri
+          command: release upload ${{ env.CN_APP_SLUG }} "${{ steps.read_version.outputs.value }}" --framework tauri
           api-key: ${{ secrets.CN_API_KEY }}
 
   publish:
-    needs: build
+    needs: [draft, build]
 
     runs-on: ubuntu-latest
 
@@ -89,5 +111,5 @@ jobs:
       - name: publish release
         uses: crabnebula-dev/cloud-release@v0.1.0
         with:
-          command: release publish ${{ env.CN_APP_SLUG }} --framework tauri
+          command: release publish ${{ env.CN_APP_SLUG }} "${{ needs.draft.outputs.tag_name }}" --framework tauri
           api-key: ${{ secrets.CN_API_KEY }}

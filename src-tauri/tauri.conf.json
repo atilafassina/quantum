@@ -1,7 +1,6 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "productName": "quantum",
-  "version": "0.0.0",
   "identifier": "quantum.template.dev",
   "build": {
     "beforeDevCommand": "pnpm dev",
@@ -17,7 +16,6 @@
       "pubkey": "public key"
     }
   },
-
   "app": {
     "windows": [
       {
