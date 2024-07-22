@@ -17,31 +17,90 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  APP_CARGO_TOML: src-tauri/Cargo.toml
   CN_APP_SLUG: ${{ github.event.inputs.app-slug || 'quantum' }}
 
 jobs:
   draft:
     runs-on: ubuntu-latest
-
+    outputs:
+      tag_name: ${{ steps.read_version.outputs.value }}
+      needs_release: ${{ steps.create_tag.outputs.tag_existed != 'true' }}
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
-      - name: create draft release
+      - name: Read version number
+        uses: SebRollen/toml-action@v1.0.2
+        id: read_version
+        with:
+          file: ${{ env.APP_CARGO_TOML }}
+          field: "package.version"
+
+      - name: Create tag
+        id: create_tag
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const tag = "${{ steps.read_version.outputs.value }}";
+            const tagRef = `tags/${tag}`;
+
+            const TAG_EXISTED = "tag_existed";
+
+            async function main() {
+              let tagExisted = true;
+
+              try {
+                await github.rest.git.getRef({
+                  ref: tagRef,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                });
+
+                tagExisted = true;
+                core.notice(`Release skipped as tag '${tag}' already exists. Update the version in '${{ env.APP_CARGO_TOML }}' to perform a release.`);
+              } catch (error) {
+                if ("status" in error && error.status === 404) tagExisted = false;
+                else throw error;
+              }
+
+            	core.setOutput(TAG_EXISTED, tagExisted);
+
+              if (!tagExisted)
+                await github.rest.git.createRef({
+                  ref: `refs/${tagRef}`,
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  sha: context.sha,
+                });
+            }
+
+            main();
+
+      - name: Create draft release
+        if: ${{ steps.create_tag.outputs.tag_existed != 'true' }}
         uses: crabnebula-dev/cloud-release@v0.1.0
         with:
-          command: release draft ${{ env.CN_APP_SLUG }} --framework tauri
+          command: release draft ${{ vars.CN_APP_ID }} "${{ steps.read_version.outputs.value }}" --framework tauri
           api-key: ${{ secrets.CN_API_KEY }}
 
   build:
     needs: draft
-
+    runs-on: ${{ matrix.os }}
+    if: ${{ needs.draft.outputs.needs_release == 'true' }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-
-    runs-on: ${{ matrix.os }}
-
+        settings:
+          - host: macos-latest
+            target: x86_64-apple-darwin
+          - host: macos-latest
+            target: aarch64-apple-darwin
+          - host: windows-latest
+            target: x86_64-pc-windows-msvc
+          - host: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -59,7 +118,7 @@ jobs:
           cache: false
 
       - name: install Linux dependencies
-        if: matrix.os == 'ubuntu-latest'
+        if: matrix.host == 'ubuntu-latest'
         run: |
           sudo apt-get update
           sudo apt-get install -y libwebkit2gtk-4.0-dev webkit2gtk-4.1
@@ -67,7 +126,7 @@ jobs:
       - name: build tauri app
         run: |
           pnpm install
-          pnpm run tauri build
+          pnpm run tauri build --ci --target ${{ matrix.settings.target }}
         env:
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
@@ -75,19 +134,17 @@ jobs:
       - name: upload assets
         uses: crabnebula-dev/cloud-release@v0.1.0
         with:
-          command: release upload ${{ env.CN_APP_SLUG }} --framework tauri
+          command: release upload ${{ env.CN_APP_SLUG }} "${{ steps.read_version.outputs.value }}" --framework tauri
           api-key: ${{ secrets.CN_API_KEY }}
 
   publish:
-    needs: build
-
+    needs: [draft, build]
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
       - name: publish release
         uses: crabnebula-dev/cloud-release@v0.1.0
         with:
-          command: release publish ${{ env.CN_APP_SLUG }} --framework tauri
+          command: release publish ${{ env.CN_APP_SLUG }} "${{ needs.draft.outputs.tag_name }}" --framework tauri
           api-key: ${{ secrets.CN_API_KEY }}
