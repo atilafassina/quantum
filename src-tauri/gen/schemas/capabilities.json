@@ -1,0 +1,1 @@
+{"main":{"identifier":"main","description":"permissions for desktop app","local":true,"windows":["main"],"permissions":["dialog:default","dialog:allow-ask","dialog:allow-message","updater:default","updater:allow-check","updater:allow-download-and-install"]}}

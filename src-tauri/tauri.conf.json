@@ -8,14 +8,7 @@
     "beforeBuildCommand": "pnpm build",
     "frontendDist": "../.output/public"
   },
-  "plugins": {
-    "updater": {
-      "active": true,
-      "endpoints": ["auto updater endpoint"],
-      "dialog": true,
-      "pubkey": "public key"
-    }
-  },
+  "plugins": {},
   "app": {
     "windows": [
       {
