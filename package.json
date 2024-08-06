@@ -15,19 +15,19 @@
   "dependencies": {
     "@solidjs/router": "^0.13.5",
     "@solidjs/start": "^1.0.1",
-    "@tauri-apps/api": ">=2.0.0-beta.0",
-    "@tauri-apps/plugin-shell": ">=2.0.0-beta.0",
+    "@tauri-apps/api": "2.0.0-beta.7",
+    "@tauri-apps/plugin-shell": "2.0.0-beta.2",
     "solid-js": "latest",
     "tailwindcss": "latest",
     "vinxi": "^0.3.12"
   },
   "devDependencies": {
-    "@tauri-apps/cli": ">=2.0.0-beta.0",
-    "autoprefixer": "^10.4.15",
+    "@tauri-apps/cli": "2.0.0-beta.12",
+    "autoprefixer": "^10.4.16",
     "internal-ip": "^7.0.0",
-    "postcss": "^8.4.30",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.4",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "prettier-plugin-tailwindcss": "^0.5.10",
     "typescript": "latest",
     "vite": "latest",
     "vite-plugin-solid": "latest"

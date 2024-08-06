@@ -14,21 +14,19 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "2.0.0-beta", features = [] }
+tauri-build = { version = "2.0.0-rc", features = [] }
 
 [dependencies]
-tauri = { version = "2.0.0-beta.22", features = [] }
-tauri-plugin-shell = "2.0.0-beta"
+tauri = { version = "2.0.0-rc", features = [] }
+tauri-plugin-shell = "2.0.0-rc"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
-tauri-plugin-devtools = "2.0.0-beta"
-specta = "=2.0.0-rc.12"
-tauri-plugin-updater = "2.0.0-beta.8"
-tauri-plugin-dialog = "2.0.0-beta.5"
-tauri-specta = { version = "=2.0.0-rc.11", features = [
-  "javascript",
-  "typescript",
-] }
+tauri-plugin-devtools = "2.0.0-rc"
+specta = "=2.0.0-rc.20"
+tauri-plugin-updater = "2.0.0-rc"
+tauri-plugin-dialog = "2.0.0-rc"
+tauri-specta = { version = "=2.0.0-rc.15", features = ["derive", "javascript", "typescript"] }
+specta-typescript = "0.0.7"
 
 
 # Optimize for smaller binary size

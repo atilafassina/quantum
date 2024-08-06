@@ -1,9 +1,9 @@
 # Quantum
 
-This template should help get you started developing with Tauri + Solid + TypeScript + TailwindCSS.
+This template should help get you started developing with Tauri + SolidStart + TypeScript.
 
 > [!note]
-> Tauri v2 is already considered stable, though it remains in Beta while the team works on audits and documentation. No big changes are expected by this point, but accept the risk of little hiccups until it reaches the final release. 
+> Tauri v2 is already considered stable, it is currently at the Release Candidate stage. This means only minor fixes are expected towards the stable release.
 
 ## Cloning it 🐑
 
@@ -82,12 +82,12 @@ This command will open the Android Pixel simulator.
 
 This template implements a GitHub Action workflow that builds and publishes the binaries for MacOS, Linux, and Windows. You can check the `.github/workflows/release.yml` file for more details. The draft and publishing of release happens through [CrabNebula Cloud](https://crabnebula.dev/cloud). To fully use this feature you will need to have a CrabNebula account and add the necessary secrets to your repository.
 
-| Key | Description |
-| -- | -- |
-| `CN_API_KEY` | The API key for your CrabNebula account. |
-| `CN_APP_SLUG` | The slug of the app you want to publish. |
-| `TAURI_SIGNING_PRIVATE_KEY` | The private key used to sign the MacOS and Windows binaries. |
-| `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` | The password for the private key. |
+| Key                                  | Description                                                  |
+| ------------------------------------ | ------------------------------------------------------------ |
+| `CN_API_KEY`                         | The API key for your CrabNebula account.                     |
+| `CN_APP_SLUG`                        | The slug of the app you want to publish.                     |
+| `TAURI_SIGNING_PRIVATE_KEY`          | The private key used to sign the MacOS and Windows binaries. |
+| `TAURI_SIGNING_PRIVATE_KEY_PASSWORD` | The password for the private key.                            |
 
 Besides those, in the `tauri.conf.json` it is also important to add a `pubkey` for the auto-updater.
 

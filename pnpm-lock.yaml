@@ -15,10 +15,10 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1(rollup@4.18.0)(solid-js@1.8.7)(vinxi@0.3.12(@opentelemetry/api@1.9.0)(@types/node@20.14.5)(ioredis@5.4.1)(terser@5.31.1))(vite@5.0.10(@types/node@20.14.5)(terser@5.31.1))
       '@tauri-apps/api':
-        specifier: '>=2.0.0-beta.0'
+        specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
       '@tauri-apps/plugin-shell':
-        specifier: '>=2.0.0-beta.0'
+        specifier: 2.0.0-beta.2
         version: 2.0.0-beta.2
       solid-js:
         specifier: latest
@@ -31,22 +31,22 @@ importers:
         version: 0.3.12(@opentelemetry/api@1.9.0)(@types/node@20.14.5)(ioredis@5.4.1)(terser@5.31.1)
     devDependencies:
       '@tauri-apps/cli':
-        specifier: '>=2.0.0-beta.0'
+        specifier: 2.0.0-beta.12
         version: 2.0.0-beta.12
       autoprefixer:
-        specifier: ^10.4.15
+        specifier: ^10.4.16
         version: 10.4.16(postcss@8.4.32)
       internal-ip:
         specifier: ^7.0.0
         version: 7.0.0
       postcss:
-        specifier: ^8.4.30
+        specifier: ^8.4.32
         version: 8.4.32
       prettier:
-        specifier: ^3.0.3
+        specifier: ^3.1.1
         version: 3.1.1
       prettier-plugin-tailwindcss:
-        specifier: ^0.5.4
+        specifier: ^0.5.10
         version: 0.5.10(prettier@3.1.1)
       typescript:
         specifier: latest
@@ -1450,8 +1450,8 @@ packages:
     resolution: {integrity: sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==}
     engines: {node: '>=14.16'}
 
-  caniuse-lite@1.0.30001572:
-    resolution: {integrity: sha512-1Pbh5FLmn5y4+QhNyJE9j3/7dK44dGB83/ZMjv/qJk86TvDbjk0LosiZo0i0WB0Vx607qMX9jYrn1VLHCkN4rw==}
+  caniuse-lite@1.0.30001649:
+    resolution: {integrity: sha512-fJegqZZ0ZX8HOWr6rcafGr72+xcgJKI9oWfDW5DrD7ExUtgZC7a7R7ZYmZqplh7XDocFdGeIFn7roAxhOeYrPQ==}
 
   chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -4329,7 +4329,7 @@ snapshots:
   autoprefixer@10.4.16(postcss@8.4.32):
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001572
+      caniuse-lite: 1.0.30001649
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -4397,7 +4397,7 @@ snapshots:
 
   browserslist@4.22.2:
     dependencies:
-      caniuse-lite: 1.0.30001572
+      caniuse-lite: 1.0.30001649
       electron-to-chromium: 1.4.616
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
@@ -4436,7 +4436,7 @@ snapshots:
 
   camelcase@7.0.1: {}
 
-  caniuse-lite@1.0.30001572: {}
+  caniuse-lite@1.0.30001649: {}
 
   chalk@2.4.2:
     dependencies:
