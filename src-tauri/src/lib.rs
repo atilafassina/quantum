@@ -3,7 +3,8 @@ use tauri_specta::Event;
 // demo command
 #[tauri::command]
 #[specta::specta]
-fn greet(name: &str) -> String {
+fn greet(app: tauri::AppHandle, name: &str) -> String {
+    DemoEvent("Hello from Rust 🦀".to_string()).emit(&app).ok();
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
@@ -38,19 +39,19 @@ pub fn run() {
 
     builder
         .plugin(tauri_plugin_shell::init())
-        .plugin(tauri_plugin_updater::Builder::new().build())
+        // .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_dialog::init())
         .invoke_handler(specta_builder.invoke_handler())
         .setup(move |app| {
             specta_builder.mount_events(app);
 
-            // dispatch demo event
+            // listen to demo event
             DemoEvent::listen(app, |event| {
                 dbg!(event.payload);
             });
 
+            // dispatch demo event
             DemoEvent("Hello from Rust 🦀".to_string()).emit(app).ok();
-
             // /dispatch demo event
 
             Ok(())

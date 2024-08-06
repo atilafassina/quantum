@@ -12,9 +12,17 @@ export const commands = {
 
 /** user-defined events **/
 
+export const events = __makeEvents__<{
+  demoEvent: DemoEvent;
+}>({
+  demoEvent: "demo-event",
+});
+
 /** user-defined constants **/
 
 /** user-defined types **/
+
+export type DemoEvent = string;
 
 /** tauri-specta globals **/
 

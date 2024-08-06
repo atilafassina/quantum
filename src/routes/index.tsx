@@ -1,13 +1,21 @@
-import { createSignal } from "solid-js";
-import { commands } from "~/bindings";
+import { createSignal, onMount } from "solid-js";
+import { commands, events } from "~/bindings";
 
 export default function Page() {
   const [greetMsg, setGreetMsg] = createSignal("");
   const [name, setName] = createSignal("");
+  const [demoEventMessage, setDemoEvent] = createSignal("listening..");
 
   async function greet() {
     setGreetMsg(await commands.greet(name()));
   }
+
+  onMount(() => {
+    events.demoEvent.listen((msg) => {
+      setDemoEvent(msg.payload);
+      return console.log("event received", msg);
+    });
+  });
 
   return (
     <div class="flex min-h-screen flex-col justify-center gap-6 text-center dark:bg-neutral-800 dark:text-neutral-200">
@@ -66,6 +74,7 @@ export default function Page() {
       </form>
 
       <p>{greetMsg()}</p>
+      <p>{demoEventMessage()}</p>
     </div>
   );
 }
