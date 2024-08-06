@@ -1,8 +1,15 @@
+use tauri_specta::Event;
+
+// demo command
 #[tauri::command]
 #[specta::specta]
 fn greet(name: &str) -> String {
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
+
+// demo event
+#[derive(serde::Serialize, serde::Deserialize, Debug, Clone, specta::Type, Event)]
+pub struct DemoEvent(String);
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -10,8 +17,9 @@ pub fn run() {
     let devtools = tauri_plugin_devtools::init();
     let mut builder = tauri::Builder::default();
 
-    let specta_builder =
-        tauri_specta::Builder::<tauri::Wry>::new().commands(tauri_specta::collect_commands![greet]);
+    let specta_builder = tauri_specta::Builder::<tauri::Wry>::new()
+        .commands(tauri_specta::collect_commands![greet])
+        .events(tauri_specta::collect_events![crate::DemoEvent]);
 
     #[cfg(debug_assertions)]
     {
@@ -30,9 +38,23 @@ pub fn run() {
 
     builder
         .plugin(tauri_plugin_shell::init())
-        // .plugin(tauri_plugin_updater::Builder::new().build())
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_dialog::init())
         .invoke_handler(specta_builder.invoke_handler())
+        .setup(move |app| {
+            specta_builder.mount_events(app);
+
+            // dispatch demo event
+            DemoEvent::listen(app, |event| {
+                dbg!(event.payload);
+            });
+
+            DemoEvent("Hello from Rust 🦀".to_string()).emit(app).ok();
+
+            // /dispatch demo event
+
+            Ok(())
+        })
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
