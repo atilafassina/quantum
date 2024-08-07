@@ -1,10 +1,10 @@
 [package]
 name = "quantum"
 version = "0.0.0"
-description = "A Tauri App"
+description = "Quantum template: with batteries included."
 authors = ["you"]
 license = ""
-repository = ""
+repository = "https://github.com/atilafassina/quantum"
 edition = "2021"
 
 [lib]
@@ -27,6 +27,7 @@ tauri-plugin-updater = "2.0.0-rc"
 tauri-plugin-dialog = "2.0.0-rc"
 tauri-specta = { version = "=2.0.0-rc.15", features = ["derive", "javascript", "typescript"] }
 specta-typescript = "0.0.7"
+log = "0.4.22"
 
 
 # Optimize for smaller binary size
