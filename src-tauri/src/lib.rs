@@ -40,8 +40,7 @@ pub fn run() {
     specta_builder
         .export(
             specta_typescript::Typescript::default()
-                .formatter(specta_typescript::formatter::prettier)
-                .header("/* eslint-disable */\n"),
+                .formatter(specta_typescript::formatter::prettier),
             "../src/bindings.ts",
         )
         .expect("failed to export typescript bindings");
