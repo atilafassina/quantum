@@ -4,7 +4,9 @@ use tauri_specta::Event;
 #[tauri::command]
 #[specta::specta]
 fn greet(app: tauri::AppHandle, name: &str) -> String {
-    DemoEvent("Hello from Rust 🦀".to_string()).emit(&app).ok();
+    DemoEvent("Demo event fired from Rust 🦀".to_string())
+        .emit(&app)
+        .ok();
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
@@ -14,6 +16,13 @@ pub struct DemoEvent(String);
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+    #[cfg(debug_assertions)]
+    {
+        log::info!("App started!");
+        log::warn!("Example Rust Log: warning!");
+        log::error!("Example Rust Log: error!");
+    }
+
     #[cfg(debug_assertions)]
     let devtools = tauri_plugin_devtools::init();
     let mut builder = tauri::Builder::default();
@@ -31,8 +40,7 @@ pub fn run() {
     specta_builder
         .export(
             specta_typescript::Typescript::default()
-                .formatter(specta_typescript::formatter::prettier)
-                .header("/* eslint-disable */\n"),
+                .formatter(specta_typescript::formatter::prettier),
             "../src/bindings.ts",
         )
         .expect("failed to export typescript bindings");
@@ -47,7 +55,7 @@ pub fn run() {
 
             // listen to demo event
             DemoEvent::listen(app, |event| {
-                dbg!(event.payload);
+                log::info!("DemoEvent received in Rust:: {:?}", event.payload);
             });
 
             // dispatch demo event
