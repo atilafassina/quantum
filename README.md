@@ -1,9 +1,12 @@
-# Quantum
-
-This template should help get you started developing with Tauri + SolidStart + TypeScript.
+<div align="center">
+<img src="/docs/quantum-dark-mode.svg#gh-dark-mode-only" width="250" />
+<img src="/docs/quantum-dark-mode.svg#gh-light-mode-only" width="250" />
+  <h1>Quantum</h1>
+  <p>This template should help get you started developing with Tauri + SolidStart + TypeScript.</p>
+</div>
 
 > [!note]
-> Tauri v2 is already considered stable, it is currently at the Release Candidate stage. This means only minor fixes are expected towards the stable release.
+> Tauri v2 is already considered stable, it is currently at the **Release Candidate** stage. This means only minor fixes are expected towards the stable release.
 
 ## Cloning it 🐑
 
@@ -23,7 +26,7 @@ git clone --depth 1 https://github.com/atilafassina/quantum
 
 The snippets below use [PNPM](https://pnpm.io) as the package manager and task runner, but Yarn, NPM, Bun, or Cargo should also work with the appropriate syntax.
 
-> 🛟 Check the [Tauri Docs](https://beta.tauri.app/) for more guidance on building your app.
+> 🛟 Check the [Tauri Docs](https://v2.tauri.app/) for more guidance on building your app.
 
 First step is always to install JavaScript dependencies from the root:
 
@@ -43,7 +46,7 @@ pnpm tauri dev
 
 <img src="/docs/ios.png" align="right" height="300"/>
 
-[Check the prerequisites](https://beta.tauri.app/guides/prerequisites/#ios) for having iOS ready to run (MacOS only).
+[Check the prerequisites](https://v2.tauri.app/guides/prerequisites/#ios) for having iOS ready to run (MacOS only).
 Once that is done, let’s create the XCode project:
 
 ```sh
@@ -63,7 +66,7 @@ This command will open XCode with your project, select the simulator and get rea
 
 <img src="/docs/android.png" align="right" height="300"/>
 
-[Android Studio and a few other steps will be required](https://beta.tauri.app/guides/prerequisites/#android) to get things up and running.
+[Android Studio and a few other steps will be required](https://v2.tauri.app/guides/prerequisites/#android) to get things up and running.
 Once that's done, you can initialize the project:
 
 ```sh
