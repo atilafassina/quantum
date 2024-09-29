@@ -1,14 +1,18 @@
+interface CargoTomlParams {
+  name: string;
+  hasAutoupdater: boolean;
+}
+export function cargoToml({ name, hasAutoupdater }: CargoTomlParams) {
+  return `
 [package]
-name = "quantum"
+name = "${name}"
 version = "0.0.0"
-description = "Quantum template: with batteries included."
-authors = ["you"]
+description = "created with Quantum template"
 license = ""
-repository = "https://github.com/atilafassina/quantum"
 edition = "2021"
 
 [lib]
-name = "quantum_lib"
+name = "${name}_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -23,7 +27,7 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 tauri-plugin-devtools = "2.0.0-rc"
 specta = "=2.0.0-rc.20"
-tauri-plugin-updater = "2.0.0-rc"
+${hasAutoupdater ? 'tauri-plugin-updater = "2.0.0-rc"' : ""}
 tauri-plugin-dialog = "2.0.0-rc"
 tauri-specta = { version = "=2.0.0-rc.15", features = ["derive", "javascript", "typescript"] }
 specta-typescript = "0.0.7"
@@ -37,3 +41,5 @@ codegen-units = 1 # Compile crates one after another so the compiler can optimiz
 lto = true        # Enables link to optimizations
 opt-level = "s"   # Optimize for binary size
 strip = true      # Remove debug symbols
+    `;
+}

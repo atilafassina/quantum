@@ -2,24 +2,21 @@
 <img src="/docs/quantum-dark-mode.svg#gh-dark-mode-only" width="250" />
 <img src="/docs/quantum-dark-mode.svg#gh-light-mode-only" width="250" />
   <h1>Quantum</h1>
-  <p>This template should help get you started developing with Tauri + SolidStart + TypeScript.</p>
+  <p>A big leap developing with Tauri + SolidStart + TypeScript.</p>
 </div>
 
-> [!note]
-> Tauri v2 is already considered stable, it is currently at the **Release Candidate** stage. This means only minor fixes are expected towards the stable release.
-
-## Cloning it 🐑
-
-You can use the Template button on the GitHub UI and shallow clone this repository. Or, do it with degit:
+## Let's get going! 🐑
 
 ```sh
-npx degit atilafassina/quantum
+pnpm create quantum
 ```
 
-Alternatively, good old `git clone` can also work. It's recommended to make a shallow clone so it doesn't bring entire repository history:
+```sh
+npm create quantum
+```
 
 ```sh
-git clone --depth 1 https://github.com/atilafassina/quantum
+yarn create quantum
 ```
 
 ## Running 🚤
@@ -127,4 +124,8 @@ Stripping symbols from generated code is generally recommended for release build
 
 ---
 
-<img width="50" src="/public/tauri.svg" />
+<div align="center">
+
+[Atila.io](https://atila.io)
+
+</div>
