@@ -1,6 +1,6 @@
 {
   "name": "create-quantum",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "./lib/index.js",
   "license": "MIT",
@@ -27,11 +27,11 @@
     "url": "https://atila.io"
   },
   "dependencies": {
-    "@clack/prompts": "^0.7.0"
+    "@clack/prompts": "^0.7.0",
+    "@tauri-apps/cli": "2.0.0-rc.17"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.2",
-    "@tauri-apps/cli": "2.0.0-rc.17",
     "@types/node": "^22.7.4",
     "release-it": "^17.6.0",
     "release-it-pnpm": "^4.6.3",
