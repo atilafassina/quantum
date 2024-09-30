@@ -1,7 +1,8 @@
 interface ReleaseActionParams {
   name: string;
-  org: string;
+  org?: string;
 }
+
 export function releaseAction({ name, org }: ReleaseActionParams) {
   return `
   name: ✨ Publish Release

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import path from "node:path";
-import { canCreateFile, createFile, deleteFile } from "./create-file";
+import { canCreateFile, createFile, deleteFile } from "./create-file.js";
 
 const FIXTURES_PATH = path.resolve(__dirname, "..", "..", "fixtures");
 

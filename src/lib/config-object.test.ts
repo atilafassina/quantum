@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { generateOutputObject } from "./config-object";
+import { generateOutputObject } from "./config-object.js";
 
 const DEFAULT_OUTPUT = {
   name: "app-created",

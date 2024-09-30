@@ -4,6 +4,10 @@
   "type": "module",
   "main": "./lib/index.js",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "htttps://github.com/AtilaFassina/quantum"
+  },
   "bin": {
     "create-quantum": "./bin/run.js"
   },
@@ -22,8 +26,11 @@
     "name": "@AtilaFassina",
     "url": "https://atila.io"
   },
+  "dependencies": {
+    "@clack/prompts": "^0.7.0"
+  },
   "devDependencies": {
-    "@release-it/keep-a-changelog": "^5.0.0",
+    "@release-it/conventional-changelog": "^8.0.2",
     "@tauri-apps/cli": "2.0.0-rc.17",
     "@types/node": "^22.7.4",
     "release-it": "^17.6.0",
@@ -36,7 +43,7 @@
   "engines": {
     "node": ">=20"
   },
-  "dependencies": {
-    "@clack/prompts": "^0.7.0"
+  "publishConfig": {
+    "provenance": "true"
   }
 }

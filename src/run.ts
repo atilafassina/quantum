@@ -99,7 +99,6 @@ export async function run() {
     pubKeyPath = (await text({
       message: "What is the path of your public key?",
       placeholder: DEFAULT_KEY_PATH(name),
-      // initialValue: DEFAULT_KEY_PATH(name) + ".pub",
     })) as string;
   } else {
     pubKeyPath = "";

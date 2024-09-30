@@ -1,15 +1,19 @@
 {
   "$schema": "https://unpkg.com/release-it@17/schema/release-it.json",
   "git": {
-    "commitMessage": "chore: release v${version}"
+    "commitMessage": "chore: release v${version}",
+    "requireCommits": true
   },
   "github": {
-    "release": true
+    "autoGenerate": true,
+    "release": true,
+    "releaseName": "v${version}"
   },
+  "npm": { "publishArgs": ["--access public", "--provenance"] },
   "plugins": {
-    "@release-it/keep-a-changelog": {
-      "filename": "CHANGELOG.md",
-      "addUnreleased": true
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "preset": "angular"
     }
   }
 }
