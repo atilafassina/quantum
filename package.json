@@ -1,6 +1,6 @@
 {
   "name": "create-quantum",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "type": "module",
   "main": "./lib/index.js",
   "license": "MIT",
