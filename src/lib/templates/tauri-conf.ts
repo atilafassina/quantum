@@ -62,7 +62,7 @@ function tauriConf({
         withGlobalTauri: false,
       },
       bundle: {
-        createArtifacts: Boolean(shouldHaveAutoupdate),
+        createUpdaterArtifacts: Boolean(shouldHaveAutoupdate),
         macOS: {
           signingIdentity,
         },
