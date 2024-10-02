@@ -1,0 +1,35 @@
+{
+  "name": "quantum-template",
+  "private": true,
+  "type": "module",
+  "description": "",
+  "scripts": {
+    "start": "vinxi start",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "serve": "vinxi serve",
+    "tauri": "tauri",
+    "format": "prettier --write src"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@solidjs/router": "^0.13.6",
+    "@solidjs/start": "^1.0.6",
+    "@tauri-apps/api": "2.0.0-rc.0",
+    "@tauri-apps/plugin-shell": "2.0.0-rc.0",
+    "solid-js": "^1.8.19",
+    "tailwindcss": "^3.4.7",
+    "vinxi": "^0.4.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.0.0-rc.0",
+    "autoprefixer": "^10.4.20",
+    "internal-ip": "^7.0.0",
+    "postcss": "^8.4.41",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.5.14",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vite-plugin-solid": "^2.10.2"
+  }
+}
