@@ -27,7 +27,7 @@ export async function run() {
 
   const bundlePath = path.resolve(fileURLToPath(import.meta.url), "..");
 
-  log.info(bundlePath);
+  // log.info(bundlePath);
 
   const name = (await text({
     initialValue: "",
@@ -49,7 +49,7 @@ export async function run() {
     },
   })) as string;
 
-  log.warn(`isDebugMode: ${isDebugMode}`);
+  // log.warn(`isDebugMode: ${isDebugMode}`);
 
   const destinationDir = `${process.cwd()}${
     isDebugMode ? "/tmp/" : "/"
