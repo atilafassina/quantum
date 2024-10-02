@@ -1,3 +1,5 @@
+import { createFile } from "../create-file.js";
+
 interface TauriConfParams {
   name: string;
   identifier: string;
@@ -5,7 +7,19 @@ interface TauriConfParams {
   pubKey?: string;
   cnOrg?: string;
 }
-export function tauriConf({
+
+interface HandleTauriConf extends TauriConfParams {
+  path: string;
+}
+
+export async function handleTauriConf({
+  path,
+  ...tauriConfParams
+}: HandleTauriConf) {
+  return createFile(path, tauriConf(tauriConfParams));
+}
+
+function tauriConf({
   name,
   identifier,
   signingIdentity,

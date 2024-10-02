@@ -1,16 +1,18 @@
+import { createFile } from "../create-file.js";
+
 interface CapabilitiesParams {
   hasAutoupdater: boolean;
 }
-export function capabilities({
-  hasAutoupdater = false,
-}: CapabilitiesParams): string {
+
+interface HandleCapabilitiesParams extends CapabilitiesParams {
+  path: string;
+}
+
+function capabilities({ hasAutoupdater = false }: CapabilitiesParams): string {
   const permissions = [
     "dialog:default",
     "dialog:allow-ask",
     "dialog:allow-message",
-    "updater:default",
-    "updater:allow-check",
-    "updater:allow-download-and-install",
     "core:event:allow-listen",
     "core:event:default",
   ];
@@ -32,4 +34,11 @@ export function capabilities({
     null,
     2
   );
+}
+
+export async function handleCapabilities({
+  path,
+  ...capabilitiesParams
+}: HandleCapabilitiesParams) {
+  return createFile(path, capabilities(capabilitiesParams));
 }

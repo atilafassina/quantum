@@ -1,6 +1,6 @@
 {
   "name": "create-quantum",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "main": "./lib/index.js",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "release-it": "release-it",
     "build": "tsup",
     "test": "vitest",
-    "dry": "pnpm build && node ./bin/run.js"
+    "dry": "pnpm build && node ./bin/run.js --debug"
   },
   "author": {
     "name": "@AtilaFassina",
