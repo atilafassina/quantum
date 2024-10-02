@@ -1,9 +1,14 @@
-export function getFlag(cliArgs: string[], flag: string) {
+export function hasDebugFlag(cliArgs: string[]) {
   const flags = cliArgs.slice(2);
 
-  const index = flags.indexOf(flag);
-  if (index > -1 && flags[index + 1]) {
-    return flags[index + 1];
-  }
-  return null;
+  return flags.includes("--debug");
 }
+
+export const QUANTUM_ASCII = `
+
+▗▄▄▄▖ ▗▖ ▗▖ ▗▄▖ ▗▖  ▗▖▗▄▄▄▖▗▖ ▗▖▗▖  ▗▖
+▐▌ ▐▌ ▐▌ ▐▌▐▌ ▐▌▐▛▚▖▐▌  █  ▐▌ ▐▌▐▛▚▞▜▌
+▐▌ ▐▌ ▐▌ ▐▌▐▛▀▜▌▐▌ ▝▜▌  █  ▐▌ ▐▌▐▌  ▐▌
+▐▙▄▟▙▖▝▚▄▞▘▐▌ ▐▌▐▌  ▐▌  █  ▝▚▄▞▘▐▌  ▐▌
+                                      
+`;

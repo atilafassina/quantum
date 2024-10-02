@@ -1,6 +1,6 @@
 {
   "name": "create-quantum",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "main": "./lib/index.js",
   "license": "MIT",
@@ -28,7 +28,8 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.7.0",
-    "@tauri-apps/cli": "2.0.0-rc.17"
+    "@tauri-apps/cli": "2.0.0-rc.17",
+    "gradient-string": "^3.0.0"
   },
   "devDependencies": {
     "@release-it/conventional-changelog": "^8.0.2",

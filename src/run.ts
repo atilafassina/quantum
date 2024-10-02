@@ -11,15 +11,16 @@ import { handleCapabilities } from "./lib/templates/capabilities.js";
 import { handleCargoToml } from "./lib/templates/cargo-toml.js";
 import { handleMainRs } from "./lib/templates/main-rs.js";
 import { handleReleaseAction } from "./lib/templates/release-action.js";
-import { getFlag } from "./lib/cli-helpers.js";
+import { hasDebugFlag, QUANTUM_ASCII } from "./lib/cli-helpers.js";
 import { handleLibRs } from "./lib/templates/lib-rs.js";
+import { vice } from "gradient-string";
 
 const DEFAULT_KEY_PATH = (name: string) => `~/.tauri/keys/${name}.key`;
 
 export async function run() {
-  intro(`Creating your Quantum app`);
-
-  const isDebugMode = getFlag(process.argv, "--debug");
+  console.log(vice.multiline(QUANTUM_ASCII));
+  intro("Welcome. Let's get you started. ✨");
+  const isDebugMode = hasDebugFlag(process.argv);
 
   if (isDebugMode) {
     log.warn("Debug mode is enabled");
