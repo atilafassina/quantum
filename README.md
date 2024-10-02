@@ -21,6 +21,8 @@ yarn create quantum
 
 ## Running 🚤
 
+Once scaffolding is done, you can `cd` into your project, install dependencies and start rocking! 🤘
+
 The snippets below use [PNPM](https://pnpm.io) as the package manager and task runner, but Yarn, NPM, Bun, or Cargo should also work with the appropriate syntax.
 
 > 🛟 Check the [Tauri Docs](https://v2.tauri.app/) for more guidance on building your app.
