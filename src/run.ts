@@ -1,4 +1,4 @@
-// #!/usr/bin/env node
+#! /usr/bin/env node
 
 import path from "path";
 import { readFile } from "node:fs/promises";
