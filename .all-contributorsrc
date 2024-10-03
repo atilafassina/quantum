@@ -19,6 +19,17 @@
       ]
     },
     {
+      "login": "brendonovich",
+      "name": "Brendan Allan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14191578?v=4",
+      "profile": "http://brendonovich.dev",
+      "contributions": [
+        "code",
+        "ideas",
+        "bug"
+      ]
+    },
+    {
       "login": "erikras",
       "name": "Erik Rasmussen",
       "avatar_url": "https://avatars.githubusercontent.com/u/4396759?v=4",
