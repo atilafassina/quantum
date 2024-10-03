@@ -1,0 +1,20 @@
+# thank you @joshuakgoldberg
+# https://github.com/JoshuaKGoldberg/create-typescript-app/blob/main/.github/workflows/contributors.yml
+jobs:
+  contributors:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/prepare
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        uses: JoshuaKGoldberg/all-contributors-auto-action@v0.5.0
+
+name: Contributors
+
+on:
+  push:
+    branches:
+      - main
