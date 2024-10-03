@@ -42,7 +42,7 @@ function tauriConf({
         ? {
             updater: {
               endpoints: [
-                `https://cdn.crabnebula.app/update/${shouldHaveAutoupdate}/${name}/{{target}}-{{arch}}/{{current_version}}`,
+                `https://cdn.crabnebula.app/update/${cnOrg}/${name}/{{target}}-{{arch}}/{{current_version}}`,
               ],
               pubkey: pubKey,
             },
