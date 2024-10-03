@@ -70,18 +70,10 @@
   "files": [
     "README.md"
   ],
+  "contributorsSortAlphabetically": true,
   "contributorsPerLine": 7,
   "projectName": "quantum",
-<<<<<<< HEAD
-<<<<<<< HEAD
   "projectOwner": "atilafassina",
   "repoType": "github",
-  "repoHost": "https://github.com",
-  "contributorsSortAlphabetically": true
-=======
-  "projectOwner": "atilafassina"
->>>>>>> 5f97573 (docs: update .all-contributorsrc)
-=======
-  "projectOwner": "atilafassina"
->>>>>>> 3bd8c4d (docs: update .all-contributorsrc)
+  "repoHost": "https://github.com"
 }
