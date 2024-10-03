@@ -52,14 +52,14 @@ function releaseAction({ name, org }: ReleaseActionParams) {
 
     build:
       needs: draft
-      runs-on: ${"${{ matrix.settings.os }}"}
+      runs-on: ${"${{ matrix.settings.host }}"}
       strategy:
         fail-fast: false
         matrix:
           settings:
             # MacOS Intel
-            - host: macos-latest
-              target: x86_64-apple-darwin
+            # - host: macos-latest
+            #  target: x86_64-apple-darwin
             # MacOS Silicon
             - host: macos-latest
               target: aarch64-apple-darwin
