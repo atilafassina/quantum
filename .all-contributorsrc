@@ -37,6 +37,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "vasfvitor",
+      "name": "Vitor Ayres",
+      "avatar_url": "https://avatars.githubusercontent.com/u/61759797?v=4",
+      "profile": "https://eu.virtuaires.com.br/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "files": [
