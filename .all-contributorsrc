@@ -5,12 +5,26 @@
   "commitType": "docs",
   "contributors": [
     {
+      "login": "atilafassina",
+      "name": "Atila Fassina",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2382552?v=4",
+      "profile": "https://atila.io",
+      "contributions": [
+        "maintenance",
+        "code",
+        "doc",
+        "bug",
+        "test",
+        "ideas"
+      ]
+    },
+    {
       "login": "erikras",
       "name": "Erik Rasmussen",
       "avatar_url": "https://avatars.githubusercontent.com/u/4396759?v=4",
       "profile": "https://erikras.com",
       "contributions": [
-        "code"
+        "doc"
       ]
     }
   ],
@@ -19,5 +33,8 @@
   ],
   "contributorsPerLine": 7,
   "projectName": "quantum",
-  "projectOwner": "atilafassina"
+  "projectOwner": "atilafassina",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "contributorsSortAlphabetically": true
 }
