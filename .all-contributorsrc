@@ -39,6 +39,16 @@
       ]
     },
     {
+      "login": "felipeemos",
+      "name": "Felipe Emos",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10969700?v=4",
+      "profile": "https://github.com/FelipeEmos",
+      "contributions": [
+        "code",
+        "bug"
+      ]
+    },
+    {
       "login": "vasfvitor",
       "name": "Vitor Ayres",
       "avatar_url": "https://avatars.githubusercontent.com/u/61759797?v=4",
@@ -53,8 +63,12 @@
   ],
   "contributorsPerLine": 7,
   "projectName": "quantum",
+<<<<<<< HEAD
   "projectOwner": "atilafassina",
   "repoType": "github",
   "repoHost": "https://github.com",
   "contributorsSortAlphabetically": true
+=======
+  "projectOwner": "atilafassina"
+>>>>>>> 5f97573 (docs: update .all-contributorsrc)
 }
