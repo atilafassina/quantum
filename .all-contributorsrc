@@ -49,6 +49,15 @@
       ]
     },
     {
+      "login": "kunalsin9h",
+      "name": "Kunal Singh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82411321?v=4",
+      "profile": "https://kunalsin9h.com",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
       "login": "vasfvitor",
       "name": "Vitor Ayres",
       "avatar_url": "https://avatars.githubusercontent.com/u/61759797?v=4",
@@ -64,6 +73,7 @@
   "contributorsPerLine": 7,
   "projectName": "quantum",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "projectOwner": "atilafassina",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -71,4 +81,7 @@
 =======
   "projectOwner": "atilafassina"
 >>>>>>> 5f97573 (docs: update .all-contributorsrc)
+=======
+  "projectOwner": "atilafassina"
+>>>>>>> 3bd8c4d (docs: update .all-contributorsrc)
 }
