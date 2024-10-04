@@ -58,19 +58,16 @@ export async function run() {
 
   log.info(`Creating your app at ${destinationDir}`);
 
-  const identifier = (await text({
-    initialValue: `com.you.${name.replaceAll("-", "")}`,
-    message: "What is the identifier of your app?",
-    placeholder: "com.yourcompany.yourapp",
-    validate(value: string | symbol) {
-      if (typeof value === "symbol") {
-        return `Value must be a string!`;
-      }
-      if (value.length === 0) {
-        return `Value is required!`;
-      }
-    },
-  })) as string;
+  const identifier =
+    ((await text({
+      message: "What is the identifier of your app?",
+      placeholder: `com.you.${name.replaceAll("-", "")}`,
+      validate(value: string | symbol) {
+        if (typeof value === "symbol") {
+          return `Value must be a string!`;
+        }
+      },
+    })) as string) || `com.you.${name.replaceAll("-", "")}`;
 
   const signingIdentity = (await text({
     initialValue: "-",
