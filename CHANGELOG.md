@@ -1,5 +1,12 @@
 
 
+# [0.1.0](https://github.com/atilafassina/quantum/compare/0.0.10...0.1.0) (2024-10-04)
+
+
+### Features
+
+* clear identifier with a default as fallback ([#36](https://github.com/atilafassina/quantum/issues/36)) ([4555e07](https://github.com/atilafassina/quantum/commit/4555e07586c77267326f16a1e9821ee174535879))
+
 ## [0.0.10](https://github.com/atilafassina/quantum/compare/0.0.9...0.0.10) (2024-10-03)
 
 
