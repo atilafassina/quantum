@@ -22,13 +22,12 @@ export async function run() {
   intro("Welcome. Let's get you started. ✨");
   const isDebugMode = hasDebugFlag(process.argv);
 
-  if (isDebugMode) {
-    log.warn("Debug mode is enabled");
-  }
-
   const bundlePath = path.resolve(fileURLToPath(import.meta.url), "..");
 
-  // log.info(bundlePath);
+  if (isDebugMode) {
+    log.warn("Debug mode is enabled");
+    log.info(`Bundle path: ${bundlePath}`);
+  }
 
   const name = (await text({
     initialValue: "",
@@ -49,8 +48,6 @@ export async function run() {
         : `Only numbers, letters, '-' and '_' are allowed`;
     },
   })) as string;
-
-  // log.warn(`isDebugMode: ${isDebugMode}`);
 
   const destinationDir = `${process.cwd()}${
     isDebugMode ? "/tmp/" : "/"
